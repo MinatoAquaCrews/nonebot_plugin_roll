@@ -43,7 +43,7 @@ v0.1.0
 
 ## 命令
 
-rd、roll、掷骰 + <x>d<y>， x指定个数，y指骰子面数。
+rd、roll、掷骰，后接[x]d[y]， x指定个数，y指骰子面数。
 
 ## 本插件改自Omega-Miya roll点抽奖插件
 
