@@ -4,7 +4,7 @@
 
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable-next-line MD036 -->
-_✨ 扔骰(tóu)子 ✨_
+_🎲 扔骰子 🎲_
 <!-- prettier-ignore-end -->
 
 </div>
@@ -16,11 +16,11 @@ _✨ 扔骰(tóu)子 ✨_
   </a>
   
   <a href="https://github.com/nonebot/nonebot2">
-    <img src="https://img.shields.io/badge/nonebot2-2.0.0beta.1-green">
+    <img src="https://img.shields.io/badge/nonebot2-2.0.0alpha.16-green">
   </a>
   
   <a href="">
-    <img src="https://img.shields.io/badge/release-v0.1.1-orange">
+    <img src="https://img.shields.io/badge/release-v0.1.2-orange">
   </a>
   
 </p>
@@ -29,11 +29,13 @@ _✨ 扔骰(tóu)子 ✨_
 
 ## 版本
 
-v0.1.1
+v0.1.2
+
+⚠ 适配nonebot2-2.0.0alpha.16，适配beta.1版本将会放在dev分支。
 
 ## 安装
 
-1. 通过`pip`或`poetry`安装；
+1. 通过`pip`或`nb`安装；
 
 2. Enjoy:tada:
 

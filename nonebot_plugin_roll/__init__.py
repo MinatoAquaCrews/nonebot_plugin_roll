@@ -2,10 +2,9 @@ import re
 import random
 from nonebot import on_command
 from nonebot.typing import T_State
-from nonebot.params import State
-from nonebot.adapters.onebot.v11.bot import Bot
-from nonebot.adapters.onebot.v11.event import GroupMessageEvent
-from nonebot.adapters.onebot.v11.permission import GROUP
+from nonebot.adapters.cqhttp.bot import Bot
+from nonebot.adapters.cqhttp.event import GroupMessageEvent
+from nonebot.adapters.cqhttp.permission import GROUP
 
 roll = on_command(
     'roll',
@@ -24,7 +23,7 @@ roll = on_command(
 
 # 修改默认参数处理
 @roll.args_parser
-async def parse(bot: Bot, event: GroupMessageEvent, state: T_State = State()):
+async def parse(bot: Bot, event: GroupMessageEvent, state: T_State):
     args = str(event.get_plaintext()).strip().lower().split()
     if not args:
         await roll.reject('你似乎没有发送有效的参数, 请重新发送:')
@@ -34,7 +33,7 @@ async def parse(bot: Bot, event: GroupMessageEvent, state: T_State = State()):
 
 
 @roll.handle()
-async def handle_first_receive(bot: Bot, event: GroupMessageEvent, state: T_State = State()):
+async def handle_first_receive(bot: Bot, event: GroupMessageEvent, state: T_State):
     args = str(event.get_plaintext()).strip().lower().split()
     if not args:
         pass
