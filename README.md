@@ -20,7 +20,7 @@ _🎲 扔骰子 🎲_
   </a>
   
   <a href="">
-    <img src="https://img.shields.io/badge/release-v0.1.2-orange">
+    <img src="https://img.shields.io/badge/release-v0.1.3-orange">
   </a>
   
 </p>
@@ -29,13 +29,13 @@ _🎲 扔骰子 🎲_
 
 ## 版本
 
-v0.1.2
+v0.1.3
 
-⚠ 适配nonebot2-2.0.0alpha.16，适配beta.1版本将会放在dev分支。
+⚠ 适配nonebot2-2.0.0alpha.16；适配beta.1版本参见beta.1分支
 
 ## 安装
 
-1. 通过`pip`或`nb`安装；
+1. 通过`pip`或`nb`安装，版本请指定`^0.1.3`；
 
 2. Enjoy:tada:
 

@@ -2,35 +2,9 @@ import re
 import random
 from nonebot import on_command
 from nonebot.typing import T_State
-from nonebot.adapters.cqhttp.bot import Bot
-from nonebot.adapters.cqhttp.event import GroupMessageEvent
-from nonebot.adapters.cqhttp.permission import GROUP
+from nonebot.adapters.cqhttp import Bot, GROUP, GroupMessageEvent
 
-roll = on_command(
-    'roll',
-    # 使用run_preprocessor拦截权限管理, 在default_state初始化所需权限
-    state={
-        '_matcher_name': 'roll',
-        '_command_permission': True,
-        '_permission_level': 10,
-        '_cool_down': 5
-    },
-    aliases={'Roll', '掷骰子', '掷骰', 'rd'},
-    permission=GROUP,
-    priority=10,
-    block=True)
-
-
-# 修改默认参数处理
-@roll.args_parser
-async def parse(bot: Bot, event: GroupMessageEvent, state: T_State):
-    args = str(event.get_plaintext()).strip().lower().split()
-    if not args:
-        await roll.reject('你似乎没有发送有效的参数, 请重新发送:')
-    state[state["_current_key"]] = args[0]
-    if state[state["_current_key"]] == '取消':
-        await roll.finish('操作已取消')
-
+roll = on_command('roll', aliases={'Roll', '掷骰子', '掷骰', 'rd'}, permission=GROUP, priority=10, block=True)
 
 @roll.handle()
 async def handle_first_receive(bot: Bot, event: GroupMessageEvent, state: T_State):
@@ -41,7 +15,6 @@ async def handle_first_receive(bot: Bot, event: GroupMessageEvent, state: T_Stat
         state['roll'] = args[0]
     else:
         await roll.finish('参数错误QAQ')
-
 
 @roll.got('roll', prompt='请掷骰子: <x>d<y>')
 async def handle_roll(bot: Bot, event: GroupMessageEvent, state: T_State):
@@ -61,7 +34,6 @@ async def handle_roll(bot: Bot, event: GroupMessageEvent, state: T_State):
         dice_side = int(_roll)
     else:
         await roll.finish(f'格式不对呢, 请重新输入: /roll <x>d<y>:')
-        return
 
     # 加入一个趣味的机制
     if random.randint(1, 100) == 99:
