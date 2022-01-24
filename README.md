@@ -31,7 +31,7 @@ _🎲 扔骰子 🎲_
 
 v0.1.3
 
-⚠ 适配nonebot2-2.0.0alpha.16；适配beta.1版本参见beta.1分支
+⚠ 适配nonebot2-2.0.0alpha.16；适配beta.1版本参见[beta.1分支](https://github.com/KafCoppelia/nonebot_plugin_roll/tree/beta.1)
 
 ## 安装
 
