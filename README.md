@@ -16,11 +16,11 @@ _🎲 扔骰子 🎲_
   </a>
   
   <a href="https://github.com/nonebot/nonebot2">
-    <img src="https://img.shields.io/badge/nonebot2-2.0.0alpha.16-green">
+    <img src="https://img.shields.io/badge/nonebot2-2.0.0beta.1-green">
   </a>
   
   <a href="">
-    <img src="https://img.shields.io/badge/release-v0.1.2-orange">
+    <img src="https://img.shields.io/badge/release-v0.2.0-orange">
   </a>
   
 </p>
@@ -29,13 +29,13 @@ _🎲 扔骰子 🎲_
 
 ## 版本
 
-v0.1.2
+v0.2.0
 
-⚠ 适配nonebot2-2.0.0alpha.16，适配beta.1版本将会放在dev分支。
+⚠ 适配nonebot2-2.0.0beta.1；适配alpha.16版本参见[alpha.16分支](https://github.com/KafCoppelia/nonebot_plugin_roll/tree/alpha.16)
 
 ## 安装
 
-1. 通过`pip`或`nb`安装；
+1. 通过`pip`或`nb`安装，版本请指定`^0.2.0`；
 
 2. Enjoy:tada:
 
