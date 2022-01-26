@@ -1,25 +1,27 @@
 import re
 import random
+from nonebot.log import logger
 from nonebot import on_command
-from nonebot.params import State
+from nonebot.params import State, CommandArg
 from nonebot.typing import T_State
-from nonebot.adapters.onebot.v11 import Bot, GROUP, GroupMessageEvent
+from nonebot.adapters.onebot.v11 import Bot, GROUP, Message, GroupMessageEvent
 
-roll = on_command('roll', aliases={'Roll', '掷骰子', '掷骰', 'rd'}, permission=GROUP, priority=10, block=True)
+roll = on_command("rd", aliases={"Roll", "掷骰子", "掷骰"}, permission=GROUP, priority=10, block=True)
 
 @roll.handle()
-async def handle_first_receive(bot: Bot, event: GroupMessageEvent, state: T_State=State()):
-    args = str(event.get_plaintext()).strip().lower().split()
+async def handle_first_receive(bot: Bot, event: GroupMessageEvent, args: Message = CommandArg(), state: T_State=State()):
+    args = args.extract_plain_text().strip().split()
+    # logger.info(args)
     if not args:
         pass
     elif args and len(args) == 1:
-        state['roll'] = args[0]
+        state['rd'] = args[0]
     else:
         await roll.finish('参数错误QAQ')
 
-@roll.got('roll', prompt='请掷骰子: <x>d<y>')
+@roll.got('rd', prompt='请掷骰子: [x]d[y]')
 async def handle_roll(bot: Bot, event: GroupMessageEvent, state: T_State=State()):
-    _roll = state['roll']
+    _roll = state['rd']
     if re.match(r'^\d+[d]\d+$', _roll):
         # <x>d<y>
         dice_info = _roll.split('d')
@@ -34,7 +36,7 @@ async def handle_roll(bot: Bot, event: GroupMessageEvent, state: T_State=State()
         dice_num = 1
         dice_side = int(_roll)
     else:
-        await roll.finish(f'格式不对呢, 请重新输入: /roll <x>d<y>:')
+        await roll.finish(f'格式不对呢, 请重新输入: /rd <x>d<y>:')
 
     # 加入一个趣味的机制
     if random.randint(1, 100) == 99:
