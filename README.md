@@ -11,44 +11,42 @@ _🎲 扔骰子 🎲_
 
 <p align="center">
   
-  <a href="https://github.com/KafCoppelia/nonebot_plugin_roll/blob/main/LICENSE">
+  <a href="https://github.com/KafCoppelia/nonebot_plugin_roll/blob/beta/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-informational">
   </a>
   
   <a href="https://github.com/nonebot/nonebot2">
-    <img src="https://img.shields.io/badge/nonebot2-2.0.0beta.1-green">
+    <img src="https://img.shields.io/badge/nonebot2-2.0.0b3+-green">
   </a>
-  
-  <a href="">
-    <img src="https://img.shields.io/badge/release-v0.2.1-orange">
-  </a>
-  
-</p>
 
+  <a href="https://github.com/MinatoAquaCrews/nonebot_plugin_roll/releases/tag/v0.2.2a1">
+    <img src="https://img.shields.io/github/v/release/MinatoAquaCrews/nonebot_plugin_roll?color=orange">
+  </a>
+  
+  <a href="https://www.codefactor.io/repository/github/MinatoAquaCrews/nonebot_plugin_roll">
+    <img src="https://img.shields.io/codefactor/grade/github/MinatoAquaCrews/nonebot_plugin_roll/beta?color=red">
+  </a>
+  
 </p>
 
 ## 版本
 
-v0.2.1
+v0.2.2a1
 
-⚠ 适配nonebot2-2.0.0beta.1；适配alpha.16版本参见[alpha.16分支](https://github.com/KafCoppelia/nonebot_plugin_roll/tree/alpha.16)
+⚠ 适配nonebot2-2.0.0b3+
 
 ## 安装
 
-1. 通过`pip`或`nb`安装，版本请指定`^0.2.1`；
-
-2. Enjoy:tada:
+通过`pip`或`nb`安装。
 
 ## 功能
 
-掷骰！扔出指定个数的多面骰子。
+掷骰！扔出指定个数的多面骰子；支持群聊与私聊。
 
 ## 命令
 
-rd、掷骰，后接“[x]d[y]”， x指定个数，y指骰子面数。
+掷骰子：[rd/roll/掷骰] [x]d[y]，掷出x个y面的骰子，并返回点数。
 
-*为避免命令冲突，`roll`命令已移除，不建议首选。
+## 本插件改自
 
-## 本插件改自Omega-Miya roll点抽奖插件
-
-[Omega Miya](https://github.com/Ailitonia/omega-miya)
+[Omega Miya-roll](https://github.com/Ailitonia/omega-miya)
