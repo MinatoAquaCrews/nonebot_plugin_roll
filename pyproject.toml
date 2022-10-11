@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nonebot_plugin_roll"
-version = "0.2.2a1"
+version = "0.2.2"
 description = "Roll a dice!"
 authors = ["KafCoppelia <k740677208@gmail.com>"]
 license = "MIT"

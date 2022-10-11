@@ -6,10 +6,10 @@ from nonebot.matcher import Matcher
 from nonebot.params import CommandArg, Depends, ArgStr
 from nonebot.adapters.onebot.v11 import Message
 
-__roll_version__ = "v0.2.2a1"
+__roll_version__ = "v0.2.2"
 __roll_notes__ = f'''
 掷骰子 {__roll_version__}
-rd/roll/掷骰/骰子 [x]d[y] 掷出x个y面的骰子'''.strip()
+rd/roll/掷骰 [x]d[y] 掷出x个y面的骰子'''.strip()
 
 roll = on_command("rd", aliases={"roll", "掷骰"}, priority=10, block=False)
 
@@ -45,7 +45,7 @@ async def _(matcher: Matcher):
     __roll = matcher.get_arg("rd", None)
     
     if not __roll:
-        await matcher.finish("输入参数错误！")
+        await matcher.finish("缺少参数！")
     
     _roll: str = __roll.extract_plain_text() 
     
@@ -89,5 +89,8 @@ async def _(matcher: Matcher):
         dice_result += random.choice(range(dice_side)) + 1
         
     dice_result += bonus
+    
+    if dice_result == 6324:
+        await matcher.send(f"彩蛋！{dice_result}工作室祝大家新年快乐！")
     
     await matcher.finish(f"你掷出了{dice_num}个{dice_side}面骰子, 点数为【{dice_result}】")
