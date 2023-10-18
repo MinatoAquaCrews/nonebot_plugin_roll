@@ -1,6 +1,5 @@
-import pytest
 import nonebot
-
+import pytest
 from nonebot.adapters.console import Adapter as ConsoleAdapter
 
 

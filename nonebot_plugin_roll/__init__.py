@@ -1,9 +1,10 @@
-import re
 import random
+import re
+
 from nonebot import on_command
-from nonebot.matcher import Matcher
-from nonebot.params import CommandArg, Depends, ArgStr
 from nonebot.adapters import Message
+from nonebot.matcher import Matcher
+from nonebot.params import ArgStr, CommandArg, Depends
 from nonebot.plugin import PluginMetadata
 
 __plugin_version__ = "v0.2.3"

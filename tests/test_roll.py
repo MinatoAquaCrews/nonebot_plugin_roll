@@ -1,7 +1,8 @@
 from datetime import datetime
+
 import pytest
-from nonebug import App
 from nonebot.adapters.console import Message, MessageEvent
+from nonebug import App
 from nonechat.info import User
 
 
