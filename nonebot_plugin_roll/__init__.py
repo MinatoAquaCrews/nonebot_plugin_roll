@@ -6,7 +6,7 @@ from nonebot.params import CommandArg, Depends, ArgStr
 from nonebot.adapters import Message
 from nonebot.plugin import PluginMetadata
 
-__plugin_version__ = "v0.2.3a2"
+__plugin_version__ = "v0.2.3"
 __plugin_usages__ = f"""
 掷骰子 {__plugin_version__}
 rd/roll/掷骰 [x]d[y] 掷出x个y面的骰子""".strip()
