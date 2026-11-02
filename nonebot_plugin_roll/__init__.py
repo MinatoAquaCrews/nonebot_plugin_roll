@@ -103,4 +103,6 @@ async def _(matcher: Matcher):
     if dice_result == 6324:
         await matcher.send("彩蛋！6324工作室祝大家新年快乐！")
 
-    await matcher.finish(f"你掷出了{dice_num}个{dice_side}面骰子, 点数为【{dice_result}】")
+    await matcher.finish(
+        f"你掷出了{dice_num}个{dice_side}面骰子, 点数为【{dice_result}】"
+    )
