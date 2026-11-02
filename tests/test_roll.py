@@ -29,17 +29,23 @@ async def test_roll_legal(app: App):
 
         event = make_event("/掷骰 0d999")
         ctx.receive_event(bot, event)
-        ctx.should_call_send(event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None)
+        ctx.should_call_send(
+            event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None
+        )
         ctx.should_finished(roll)
 
         event = make_event("/掷骰 d0")
         ctx.receive_event(bot, event)
-        ctx.should_call_send(event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None)
+        ctx.should_call_send(
+            event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None
+        )
         ctx.should_finished(roll)
 
         event = make_event("/rd -1d1")
         ctx.receive_event(bot, event)
-        ctx.should_call_send(event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None)
+        ctx.should_call_send(
+            event, "错误！你掷出了不存在的骰子, 只有上帝知道结果是多少🤔", result=None
+        )
         ctx.should_finished(roll)
 
         event = make_event("/rd d1000")
